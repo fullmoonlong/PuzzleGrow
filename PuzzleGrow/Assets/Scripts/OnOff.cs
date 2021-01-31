@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OnOff : MonoBehaviour
@@ -91,4 +92,56 @@ public class OnOff : MonoBehaviour
     //        MenuGame.SetActive(true);
     //    }
     //}
+
+    public void OnClickAnimal()
+    {
+        //클릭한 버튼의 텍스트가 뭐일경우
+      
+        //클릭한 버튼 오브젝트
+        GameObject tempBtn = EventSystem.current.currentSelectedGameObject;
+
+        switch (tempBtn.transform.GetChild(0).GetComponent<Text>().text)
+        {
+            case "Dog":
+                {
+                    print("강아지가 생성되었습니다.");
+                    //AnimalScript Dog = new AnimalScript();
+                    //Dog.m_type = "Dog";
+                    //Dog.m_level = 1;
+                    //Dog.m_hungry = 0;
+                    //Dog.m_happy = 100;
+                    //Dog.m_clean = 100;
+                    //AnimalList.Add(Dog);
+                    break;
+                }
+
+            case "Bird":
+                {
+                    print("새가 생성되었습니다.");
+                    //AnimalScript Bird = new AnimalScript();
+                    //Bird.m_type = "Bird";
+                    //Bird.m_level = 1;
+                    //Bird.m_hungry = 0;
+                    //Bird.m_happy = 100;
+                    //Bird.m_clean = 100;
+                    //AnimalList.Add(Bird);
+                    break;
+                }
+
+            case "Cat":
+                {
+                    print("고양이가 생성되었습니다.");
+                    //AnimalScript Cat = new AnimalScript();
+                    //Cat.m_type = "Cat";
+                    //Cat.m_level = 1;
+                    //Cat.m_hungry = 0;
+                    //Cat.m_happy = 100;
+                    //Cat.m_clean = 100;
+                    //AnimalList.Add(Cat);
+                    break;
+                }
+
+        }
+
+    }
 }
